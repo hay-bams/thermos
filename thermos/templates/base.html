@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.min.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 
-        <script src="../static/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <script src="{{ url_for('static', filename='js/vendor/modernizr-2.6.2-respond-1.1.0.min.js') }}"></script>
     </head>
     <body>
 
@@ -29,17 +29,17 @@
 
         <div class="main-container">
             <div class="main wrapper clearfix">
-              <article class="flashes">
-                {% with messages = get_flashed_messages() %}
-                  {% if messages %}
-                    <ul>
-                      {% for message in messages %}
-                        <li>{{ message }}</li>
-                      {% endfor %}
-                    </ul>
-                  {% endif %}
-                {% endwith %}
-              </article>
+                <article class=flashes>
+                    {% with messages = get_flashed_messages() %}
+                      {% if messages %}
+                        <ul>
+                        {% for message in messages %}
+                          <li>{{ message }}</li>
+                        {% endfor %}
+                        </ul>
+                      {% endif %}
+                    {% endwith %}
+                </article>
 
                 {%  block content %}
                 {%  endblock %}
